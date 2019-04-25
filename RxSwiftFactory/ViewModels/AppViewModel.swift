@@ -33,9 +33,6 @@ public class AppViewModel {
     
     for animal in Animal.allCats() {
       
- //     let newImage = NSEntityDescription.insertNewObject(forEntityName: "Images", into: managedContext) as! Images
-
-      //let newAnimal = NSEntityDescription.insertNewObject(forEntityName: "Animals", into: managedContext) as! Animals
       let newAnimal = Animals(context: managedContext)
       
       newAnimal.title = animal.title
@@ -56,9 +53,6 @@ public class AppViewModel {
     
     for animal in Animal.allDogs() {
       
-      //let newAnimal = NSEntityDescription.insertNewObject(forEntityName: "Animals", into: managedContext) as! Animals
-     // let newImage = NSEntityDescription.insertNewObject(forEntityName: "Images", into: managedContext) as! Images
-
       let newAnimal = Animals(context: managedContext)
       newAnimal.title = animal.title
       newAnimal.creator = animal.creator

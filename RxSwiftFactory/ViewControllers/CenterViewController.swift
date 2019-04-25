@@ -24,8 +24,9 @@ public class CenterViewController: NiblessViewController {
     self.title = "RxSwift Factory"
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Puppies", style: .plain, target: self, action: #selector(puppiesTapped))
     self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Kitties", style: .plain, target: self, action: #selector(kittiesTapped))
-    
-    viewModel.animal.asObservable().subscribe(onNext: {
+
+    //Observe the selected animal, but we don't wan't the first empty one that was initialised in the viewModel. So skip(1)
+    viewModel.animal.asObservable().skip(1).subscribe(onNext: {
       let view = self.view as! CenterRootView
       view.imageNameLabel.text = $0.title
       view.imageCreatorLabel.text = $0.creator
