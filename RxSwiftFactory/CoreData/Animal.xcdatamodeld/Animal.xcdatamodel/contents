@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Animals" representedClassName=".Animals" syncable="YES">
+        <attribute name="creator" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Images" inverseName="animals" inverseEntity="Images" syncable="YES"/>
+    </entity>
+    <entity name="Images" representedClassName="Images" syncable="YES">
+        <attribute name="animalImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="animals" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Animals" inverseName="image" inverseEntity="Animals" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Animals" positionX="-676.91015625" positionY="-81.87109375" width="128" height="118"/>
+        <element name="Images" positionX="-261" positionY="9" width="128" height="73"/>
+    </elements>
+</model>
